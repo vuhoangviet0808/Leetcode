@@ -11,10 +11,10 @@ class Solution {
     }
 public:
     vector<string> letterCombinations(string digits) {
-        vector<string> res;
-        if(digits.length() == 0) return res;
+        if(digits.empty()) return {};
         map<char, string> digit_phone = {{'2', "abc"}, {'3', "def"}, {'4', "ghi"},
                         {'5', "jkl"}, {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"}};
+        vector<string> res;
         backtracking(res, "", digits, 0, digit_phone);
         return res;
     }
